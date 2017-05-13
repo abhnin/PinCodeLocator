@@ -22,20 +22,25 @@ public class SelectStateActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         data_list  = new ArrayList<>();
-        load_data_from_server(0);
+
+        System.out.println(data_list);
 
         gridLayoutManager = new GridLayoutManager(this,1);
         recyclerView.setLayoutManager(gridLayoutManager);
-
+        load_data_from_server(0);
         adapter = new StateAdapter(this,data_list);
         recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
 
     private void load_data_from_server(int id) {
 
         StateData data = new StateData(1, "Delhi");
+        StateData data1 = new StateData(1, "WB");
+
 
         data_list.add(data);
-        adapter.notifyDataSetChanged();
+        data_list.add(data1);
+
     }
 }

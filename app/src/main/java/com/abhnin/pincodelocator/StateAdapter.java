@@ -33,12 +33,13 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        System.out.println(position );
         holder.description.setText(my_data.get(position).getName());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return my_data.size();
     }
 
     public  class ViewHolder extends  RecyclerView.ViewHolder{
