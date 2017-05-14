@@ -9,9 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:elevation="3dp"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="10dp"
+
         card_view:cardUseCompatPadding="true">
 
         <RelativeLayout
@@ -26,15 +24,17 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
                 android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:text="test"
-                android:textColor="#000000"
-                android:textSize="18sp"
+                android:textColor="#ffffff"
+                android:textSize="22sp"
                 android:textStyle="normal"
-                android:typeface="sans" />
+                android:typeface="sans"
+                android:background="@color/colorPrimary"/>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/colorAccent"/>
+                android:background="@color/colorPrimary"/>
 
 
         </RelativeLayout>
