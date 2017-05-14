@@ -81,6 +81,20 @@ public class SelectStateActivity extends AppCompatActivity implements SearchView
 
     @Override
     public boolean onQueryTextChange(String newText) {
+        List<StateData> newListNew = new ArrayList<>();
+
+
+        for (StateData data : data_list){
+            String name = data.getName();
+            if (name.toLowerCase().contains(newText.toLowerCase()) ){
+                //System.out.println("O" + "uID: " + uID + "   query: " + newText);
+                newListNew.add(data);
+            }
+        }
+        System.out.println(newListNew);
+        adapter.setFilter(newListNew);
+
         return false;
     }
+
 }
