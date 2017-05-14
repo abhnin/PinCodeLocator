@@ -1,6 +1,8 @@
 package com.abhnin.pincodelocator;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
@@ -32,9 +34,19 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        System.out.println(position );
+    public void onBindViewHolder(ViewHolder holder, final int position) {
+        //System.out.println(position );
         holder.description.setText(my_data.get(position).getName());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, PinCodesActiity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("state", my_data.get(position).getName());
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

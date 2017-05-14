@@ -37,7 +37,7 @@ public class SelectStateActivity extends AppCompatActivity implements SearchView
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         data_list  = new ArrayList<>();
 
-        System.out.println(data_list);
+        //System.out.println(data_list);
 
         gridLayoutManager = new GridLayoutManager(this,1);
         recyclerView.setLayoutManager(gridLayoutManager);
@@ -91,7 +91,7 @@ public class SelectStateActivity extends AppCompatActivity implements SearchView
                 newListNew.add(data);
             }
         }
-        System.out.println(newListNew);
+        //System.out.println(newListNew);
         adapter.setFilter(newListNew);
 
         return false;
